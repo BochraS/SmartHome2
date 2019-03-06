@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="config">
+            <h2><span>Config</span> {{config.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Key</span></dt>
+                <dd>
+                    <span>{{config.key}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{config.description}}</span>
+                </dd>
+                <dt><span>Des</span></dt>
+                <dd>
+                    <span>{{config.des}}</span>
+                </dd>
+                <dt><span>Smart Object</span></dt>
+                <dd>
+                    <div *ngIf="config.smartObjectId">
+                        <a [routerLink]="['/smart-object', config.smartObjectId, 'view']">{{config.smartObjectId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Profile Conf Value</span></dt>
+                <dd>
+                    <div *ngIf="config.profileConfValueId">
+                        <a [routerLink]="['/profile-conf-value', config.profileConfValueId, 'view']">{{config.profileConfValueId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/config', config.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

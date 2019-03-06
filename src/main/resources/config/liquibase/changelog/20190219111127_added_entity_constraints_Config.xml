@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Config.
+    -->
+    <changeSet id="20190219111127-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="smart_object_id"
+                                 baseTableName="config"
+                                 constraintName="fk_config_smart_object_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="smart_object"/>
+
+        <addForeignKeyConstraint baseColumnNames="profile_conf_value_id"
+                                 baseTableName="config"
+                                 constraintName="fk_config_profile_conf_value_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profile_conf_value"/>
+
+    </changeSet>
+</databaseChangeLog>

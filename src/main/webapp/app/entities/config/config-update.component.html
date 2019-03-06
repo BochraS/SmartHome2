@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-config-heading">Create or edit a Config</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!config.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="config.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_key">Key</label>
+                    <input type="text" class="form-control" name="key" id="field_key"
+                        [(ngModel)]="config.key" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="config.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_des">Des</label>
+                    <input type="text" class="form-control" name="des" id="field_des"
+                        [(ngModel)]="config.des" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_smartObject">Smart Object</label>
+                    <select class="form-control" id="field_smartObject" name="smartObject" [(ngModel)]="config.smartObjectId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="smartObjectOption.id" *ngFor="let smartObjectOption of smartobjects; trackBy: trackSmartObjectById">{{smartObjectOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_profileConfValue">Profile Conf Value</label>
+                    <select class="form-control" id="field_profileConfValue" name="profileConfValue" [(ngModel)]="config.profileConfValueId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="profileConfValueOption.id" *ngFor="let profileConfValueOption of profileconfvalues; trackBy: trackProfileConfValueById">{{profileConfValueOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

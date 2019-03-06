@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "config",
+            "otherEntityName": "config",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profileConfValue"
+        },
+        {
+            "relationshipName": "profile",
+            "otherEntityName": "profile",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profileConfValue"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190219111444",
+    "dto": "mapstruct",
+    "searchEngine": "elasticsearch",
+    "service": "serviceClass",
+    "entityTableName": "profile_conf_value",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

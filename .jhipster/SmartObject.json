@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "smartObject"
+        },
+        {
+            "relationshipName": "config",
+            "otherEntityName": "config",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "smartObject"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "shared",
+            "fieldType": "Boolean",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "fabriquant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "yearOfFabriquation",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190219110711",
+    "dto": "mapstruct",
+    "searchEngine": "elasticsearch",
+    "service": "serviceClass",
+    "entityTableName": "smart_object",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

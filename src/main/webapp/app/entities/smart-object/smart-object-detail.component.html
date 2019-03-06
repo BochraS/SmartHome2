@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="smartObject">
+            <h2><span>Smart Object</span> {{smartObject.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{smartObject.type}}</span>
+                </dd>
+                <dt><span>Shared</span></dt>
+                <dd>
+                    <span>{{smartObject.shared}}</span>
+                </dd>
+                <dt><span>Fabriquant</span></dt>
+                <dd>
+                    <span>{{smartObject.fabriquant}}</span>
+                </dd>
+                <dt><span>Year Of Fabriquation</span></dt>
+                <dd>
+                    <span>{{smartObject.yearOfFabriquation}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    {{smartObject.userLogin}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/smart-object', smartObject.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

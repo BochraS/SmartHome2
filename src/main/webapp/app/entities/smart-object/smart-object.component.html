@@ -1,0 +1,50 @@
+<div>
+    <h2 id="page-heading">
+        <span>Smart Objects</span>
+        <button id="jh-create-entity" class="btn btn-basic float-right jh-create-entity create-smart-object" [routerLink]="['/smart-object/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Smart Object
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="smartObjects">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><span>Type</span></th>
+                <th><span>Shared</span></th>
+                <th><span>Fabriquant</span></th>
+                <th><span>Year Of Fabriquation</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let smartObject of smartObjects ;trackBy: trackId">
+                <td>{{smartObject.type}}</td>
+                <td>{{smartObject.shared}}</td>
+                <td>{{smartObject.fabriquant}}</td>
+                <td>{{smartObject.yearOfFabriquation}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/smart-object', smartObject.id, 'edit']"
+                                class="btn btn-basic btn-sm">
+                            <span class="d-none d-md-inline">Configure</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'smart-object/'+ smartObject.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-basic btn-sm">
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

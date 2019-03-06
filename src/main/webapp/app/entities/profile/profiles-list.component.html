@@ -1,0 +1,13 @@
+<div>
+    <h2>
+        <span>Profiles</span>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="profiles">
+        <div class="btn-group" *ngFor="let profile of profiles ;trackBy: trackId">
+                <button class="btn btn-secondary btn-lg" (click)="OnProfileClick()">{{profile.lastName}} {{profile.firstName}}</button>
+        </div>
+    </div>
+
+</div>

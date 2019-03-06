@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "smartObject",
+            "otherEntityName": "smartObject",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "profileConfValue",
+            "otherEntityName": "profileConfValue",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "confValue",
+            "otherEntityName": "confValue",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "config"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "key",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "des",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190219111127",
+    "dto": "mapstruct",
+    "searchEngine": "elasticsearch",
+    "service": "serviceClass",
+    "entityTableName": "config",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "config",
+            "otherEntityName": "config",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190219111245",
+    "dto": "mapstruct",
+    "searchEngine": "elasticsearch",
+    "service": "serviceClass",
+    "entityTableName": "conf_value",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

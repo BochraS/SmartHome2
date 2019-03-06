@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "profile"
+        },
+        {
+            "relationshipName": "profileConfValue",
+            "otherEntityName": "profileConfValue",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20190219111734",
+    "dto": "mapstruct",
+    "searchEngine": "elasticsearch",
+    "service": "serviceClass",
+    "entityTableName": "profile",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
